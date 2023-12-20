@@ -4,7 +4,7 @@ version: '3'
 services:
     docker-registry:
         container_name: hub.kubernetesway.in
-        image: registry:2
+        image: registry
         ports:
             - 443:443
         environment:
