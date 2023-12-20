@@ -21,7 +21,7 @@ services:
         ports:
             - 8080:443
         environment:
-            ENV_DOCKER_REGISTRY_HOST: hub.fliplabs.net
+            ENV_DOCKER_REGISTRY_HOST: hub.kubernetesway.in
             ENV_DOCKER_REGISTRY_PORT: 443
             ENV_DOCKER_REGISTRY_USE_SSL: 1
             ENV_USE_SSL: 1
