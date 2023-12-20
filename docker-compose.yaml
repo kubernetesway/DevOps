@@ -19,7 +19,7 @@ services:
         container_name: docker-registry-ui
         image: konradkleine/docker-registry-frontend:v2
         ports:
-            - 8080:443
+            - 8443:443
         environment:
             ENV_DOCKER_REGISTRY_HOST: hub.kubernetesway.in
             ENV_DOCKER_REGISTRY_PORT: 443
