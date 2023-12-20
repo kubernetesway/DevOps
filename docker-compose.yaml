@@ -1,0 +1,37 @@
+---
+version: '3'
+
+services:
+    docker-registry:
+        container_name: hub.kubernetesway.in
+        image: registry:2
+        ports:
+            - 443:443
+        environment:
+          - REGISTRY_HTTP_ADDR=0.0.0.0:443
+          - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/server.crt 
+          - REGISTRY_HTTP_TLS_KEY=/certs/server.key 
+        restart: always
+        volumes:
+            - ./volume:/var/lib/registry
+            - ./certs:/certs
+    docker-registry-ui:
+        container_name: docker-registry-ui
+        image: konradkleine/docker-registry-frontend:v2
+        ports:
+            - 8080:443
+        environment:
+            ENV_DOCKER_REGISTRY_HOST: hub.fliplabs.net
+            ENV_DOCKER_REGISTRY_PORT: 443
+            ENV_DOCKER_REGISTRY_USE_SSL: 1
+            ENV_USE_SSL: 1
+        volumes:
+           - ./certss/server.crt:/etc/apache2/server.crt:ro
+           - ./certss/server.key:/etc/apache2/server.key:ro
+
+ 
+
+   
+
+
+
