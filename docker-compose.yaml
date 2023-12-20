@@ -26,8 +26,8 @@ services:
             ENV_DOCKER_REGISTRY_USE_SSL: 1
             ENV_USE_SSL: 1
         volumes:
-           - ./certss/server.crt:/etc/apache2/server.crt:ro
-           - ./certss/server.key:/etc/apache2/server.key:ro
+           - ./certs/server.crt:/etc/apache2/server.crt:ro
+           - ./certs/server.key:/etc/apache2/server.key:ro
 
  
 
